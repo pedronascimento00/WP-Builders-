@@ -1,0 +1,327 @@
+/* Estilos Globais e Reset Básico */
+:root {
+    --primary-color: #007bff; /* Azul Profissional */
+    --secondary-color: #343a40; /* Cinza Escuro */
+    --background-color: #f8f9fa; /* Fundo Claro */
+    --text-color: #495057; /* Texto Escuro */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding-top: 65px; /* Espaço para a navbar fixa */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    color: var(--secondary-color);
+}
+
+/* --- NAVEGAÇÃO (NAVBAR FIXA) --- */
+.navbar {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-logo {
+    color: var(--secondary-color); /* Logo em cinza escuro */
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    margin-left: 25px;
+}
+
+.navbar-links a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    padding: 5px 0;
+    transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+    color: var(--primary-color);
+}
+
+.btn-orcamento {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn-orcamento:hover {
+    background-color: #0056b3;
+}
+
+/* --- SEÇÃO HERO --- */
+.hero-section {
+    background-image: url('../imge/wp-backgroud.jpg'); 
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+
+    padding: 120px 0;
+    text-align: left; /* Conteúdo alinhado à esquerda */
+    position: relative;
+    color: white;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay preto com 50% de opacidade */
+    z-index: 1; 
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px; /* Limita a largura do texto para melhor leitura */
+}
+
+.hero-content h1 {
+    font-size: 2.8em; 
+    margin: 0 0 15px 0;
+    color: white; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.1em;
+    margin: 0 0 30px 0;
+    color: #dee2e6; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÃO INFERIOR (GRID com Processo e Contato) --- */
+.bottom-grid-section {
+    background-color: var(--background-color); /* Fundo claro */
+    padding: 60px 0;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Processo maior que Contato */
+    gap: 60px;
+    padding: 40px 0;
+    align-items: start; /* Alinha o conteúdo ao topo das colunas */
+}
+
+/* --- COLUNA DA ESQUERDA: PROCESSO --- */
+.process-column {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.process-column h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.process-item {
+    display: flex;
+    align-items: center;
+    background-color: #f1f7fe; /* Fundo mais claro para cada item */
+    padding: 15px 20px;
+    border-radius: 6px;
+    border: 1px solid #e0eafc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.process-item i {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-right: 20px;
+    min-width: 30px; /* Garante que o ícone não se comprima */
+}
+
+.process-item p {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+/* --- COLUNA DA DIREITA: CONTATO --- */
+.contact-column {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.contact-column h2 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+#contactForm textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.btn-orcamento-form {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn-orcamento-form:hover {
+    background-color: #0056b3;
+}
+
+#formMessage {
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--secondary-color);
+    color: #adb5bd;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85em;
+    border-top: 5px solid var(--primary-color); /* Linha de destaque */
+}
+
+/* --- Responsividade --- */
+@media (max-width: 992px) {
+    .main-grid {
+        grid-template-columns: 1fr; /* Colunas em pilha em telas menores */
+        gap: 40px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Esconde o menu para simplificar em mobile */
+    }
+    body {
+        padding-top: 50px; /* Ajusta padding para nova altura da navbar */
+    }
+    .navbar {
+        padding: 8px 0;
+    }
+    .navbar-logo {
+        font-size: 1.3em;
+    }
+    .hero-section {
+        padding: 80px 0;
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content p {
+        font-size: 1em;
+    }
+    .process-column, .contact-column {
+        padding: 30px;
+    }
+    .process-column h2, .contact-column h2 {
+        font-size: 1.5em;
+    }
+}
